@@ -10,16 +10,18 @@ return {
       "typescript",
       "svelte",
     },
+
+    auto_install = true,
+
     highlight = {
       enable = true,
     },
+
     indent = {
       enable = true,
     },
+
     fold = {
-      enable = true,
-    },
-    autotag = {
       enable = true,
     },
   },

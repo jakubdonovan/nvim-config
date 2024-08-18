@@ -1,4 +1,11 @@
 local options = {
+  formatters = {
+    svelte_fmt = {
+      command = "prettier",
+      args = { "--plugin", "prettier-plugin-svelte", "$FILENAME" },
+    },
+  },
+
   formatters_by_ft = {
     lua = { { "stylua" } },
     css = { { "prettier" } },
@@ -7,16 +14,10 @@ local options = {
     typescript = { { "prettier" } },
     json = { { "prettier" } },
     jsonc = { { "prettier" } },
-    svelte = {
-      {
-        command = "prettier",
-        args = { "--plugin", "prettier-plugin-svelte", "$FILENAME" },
-      },
-    },
+    svelte = { "svelte_fmt" },
   },
 
   format_on_save = {
-    -- These options will be passed to conform.format()
     enabled = true,
     timeout_ms = 2000,
     lsp_fallback = true,

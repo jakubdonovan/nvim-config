@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
@@ -7,8 +8,11 @@ return {
       "vimdoc",
       "html",
       "css",
+      "javascript",
       "typescript",
       "svelte",
+      "tsx",
+      "json",
     },
 
     auto_install = true,

@@ -1,1 +1,0 @@
-return { "nvchad/nvim-colorizer" }

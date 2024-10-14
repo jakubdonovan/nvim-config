@@ -25,3 +25,22 @@ map({ "n", "t" }, "<A-i>", function()
     hl = "Normal:floatTermBg,FloatBorder:floatTermBorder",
   }
 end, { desc = "terminal toggle floating term" })
+
+map({ "n" }, "<leader>th", function()
+  require("nvchad.themes").open { icon = " " }
+end, { desc = "open theme picker" })
+
+--nvchad/menu
+map({ "n" }, "<C-t>", function()
+  require("menu").open "default"
+end, { desc = "open menu" })
+
+map({ "n" }, "<RightMouse>", function()
+  vim.cmd.exec '"normal! \\<RightMouse>"'
+
+  local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
+  require("menu").open(options, { mouse = true })
+end, {})
+
+-- WARP SHIFT-TAB WORKAROUND
+map({ "n" }, "<c-Y>", require("nvchad.tabufline").prev)

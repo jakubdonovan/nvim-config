@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "stevearc/conform.nvim",
   -- Activate formatting on save by setting up an autocmd within the plugin configuration

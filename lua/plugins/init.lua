@@ -10,7 +10,6 @@ return {
   { import = "plugins.spec.hardtime" },
   { import = "plugins.spec.nvim-surround" },
   { import = "plugins.spec.nvim-ts-autotag" },
-  { import = "plugins.spec.nvim-ufo" },
   { import = "plugins.spec.vim-be-good" },
   { import = "plugins.spec.screenkey" },
   { import = "plugins.spec.tiny-inline-diagnostic" },

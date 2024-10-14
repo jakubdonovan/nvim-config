@@ -1,7 +1,26 @@
+---@type NvPluginSpec
 return {
-  "mbbill/undotree",
-  cmd = "UndotreeToggle",
-  init = function()
-    vim.keymap.set("n", "<leader>ut", "<cmd>UndotreeToggle<CR>", { desc = "UndoTree toggler" })
-  end,
+  "jiaoshijie/undotree",
+  keys = {
+    { "<leader>ut", "<cmd>lua require('undotree').toggle()<cr>", desc = "undo history" },
+  },
+  opts = {
+    float_diff = true, -- using float window previews diff, set this `true` will disable layout option
+    layout = "left_bottom", -- "left_bottom", "left_left_bottom"
+    position = "left", -- "right", "bottom"
+    ignore_filetype = { "undotree", "undotreeDiff", "qf", "TelescopePrompt", "spectre_panel", "tsplayground" },
+    window = {
+      winblend = 30,
+    },
+    keymaps = {
+      ["j"] = "move_next",
+      ["k"] = "move_prev",
+      ["gj"] = "move2parent",
+      ["J"] = "move_change_next",
+      ["K"] = "move_change_prev",
+      ["<cr>"] = "action_enter",
+      ["p"] = "enter_diffbuf",
+      ["q"] = "quit",
+    },
+  },
 }

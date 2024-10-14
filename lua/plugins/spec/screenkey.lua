@@ -1,9 +1,10 @@
+---@type NvPluginSpec
 return {
   "NStefan002/screenkey.nvim",
-  init = function()
-    vim.keymap.set("n", "<leader>ok", "<cmd>Screenkey<cr>", { desc = "Screenkey | Toggle Screenkey", silent = true })
-  end,
   cmd = "Screenkey",
+  keys = {
+    { "<leader>sk", "<cmd>Screenkey<cr>", desc = "Screenkey | Toggle Screenkey", silent = true },
+  },
   opts = {
     clear_after = 5,
   },
